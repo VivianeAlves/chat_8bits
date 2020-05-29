@@ -1,0 +1,18 @@
+<div class="panel">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Suas salas</h4>
+      <p class="card-text">
+        <% for sala in @chat_rooms %>
+        <div class="list_card">
+          <%= link_to "#{sala.title}", edit_chat_room_path(sala), class: "pull-left" %> <%= link_to 'X',sala, method: :delete, data: {confirm: "Você tem certeza que deseja excluir a sala #{sala.title}?"}, :class => 'pull-right' %> <br>
+        </div>
+      <% end %>
+
+      </p>
+      <div class="obs">
+        Clique no nome da sala para editar ou click em X para excluí-la.
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="panel">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Seu perfil</h4>
+      <img class="card-img-top img-fluid" src="/bot_perfil.png">
+      <p class="card-text">
+      <div class="obs" style="text-align: justify !important;">
+        <strong>Nick:</strong><%= current_user.name %><br>
+        <strong>E-mail:</strong><%= current_user.email %>
+      </div>
+      <%= link_to "Editar Perfil",edit_user_registration_path, class:"btn btn-primary" %>
+      </p>
+    </div>
+  </div>
+</div>

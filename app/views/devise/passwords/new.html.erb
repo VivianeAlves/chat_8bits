@@ -1,0 +1,26 @@
+<%= render "shared/meta" %>
+
+<div class="panel fundo-login">
+  <h3 class="login-title">Esqueceu sua senha?</h3>
+  <div class="panel-body">
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f| %>
+      <h3><%= render "devise/shared/error_messages", resource: resource %></h3>
+
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control input" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Redefinir senha", :class => 'btn btn-block' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+<script>
+    document.body.style = "background-color: #333333;";
+</script>

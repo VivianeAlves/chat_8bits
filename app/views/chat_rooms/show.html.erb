@@ -1,0 +1,22 @@
+<h5 class="nome_sala">Você está na Sala: <strong><%= @chat_room.title.capitalize %></strong></h5>
+
+<div id="messages" data-chat-room-id="<%= @chat_room.id %>" class="chat_area">
+  <%= render @chat_room.messages %>
+</div>
+
+<%= form_for @message, url: '#' do |f| %>
+  <div class="form-group">
+    <%= f.label :Escreva_a_mensagem %>
+    <%= f.text_area :body, class: 'form-control' %>
+    <small class="text-muted">Insira de 2 a 1000 carateres</small>
+  </div>
+  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
+  <%= f.submit "Enviar!", class: 'btn btn-primary' %>
+<% end %>
+
+<script>
+    $(document).ready(function () {
+        var objDiv = document.getElementsByClassName("chat_area")[0];
+        objDiv.scrollTop = objDiv.scrollHeight;
+    });
+</script>

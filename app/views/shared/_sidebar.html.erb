@@ -1,0 +1,33 @@
+<% @salas = ChatRoom.all %>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+  <div class="row">
+    <div class="custom-search-input">
+      <strong>Salas de chat disponíveis</strong>
+    </div>
+    <div class="all_conversation">
+      <div class="input-group" id="search">
+        <center><input type="text" class="search-query form-control" placeholder="Insira o nome da sala"/></center>
+      </div>
+    </div>
+    <div class="member_list">
+      <ul class="list-unstyled">
+        <% @salas.each do |sala| %>
+          <a href="/chat_rooms/<%= sala.id %>">
+            <li class="left clearfix salas">
+                          <span class="chat-img pull-left">
+                       <img src="/android_terminal.png" alt="User Avatar" class="img-circle" width="47px" height="45px">
+                       </span>
+              <div class="chat-body clearfix">
+                <div class="header_sec">
+                  <strong class="primary-font"><%= sala.title.capitalize %></strong>
+                  <!--                    <strong class="pull-right"><span class="badge">3</span>09:45AM</strong>-->
+                </div>
+              </div>
+            </li>
+          </a>
+        <% end %>
+      </ul>
+      <p class="lead"><%= link_to 'Nova sala', new_chat_room_path, class: 'btn btn-primary' %></p>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+<div class="panel">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Nova sala</h4>
+      <img class="card-img-top img-fluid" src="/bot_perfil.png">
+      <p class="card-text">
+        <%= form_for @chat_room do |f| %>
+        <div class="form-group">
+          <%= f.label :Nome_da_sala %>
+          <%= f.text_field :title, autofocus: true, class: 'form-control input' %>
+        </div>
+        <% if texto.start_with?("A") %>
+          <%= link_to "<< Voltar", chat_rooms_user_path, class: "btn btn-primary" %>
+        <% end %>
+        <%= f.submit "#{texto}", class: 'btn btn-primary' %>
+      <% end %>
+      </p>
+    </div>
+  </div>
+</div>

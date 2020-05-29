@@ -1,0 +1,351 @@
+$verde: #00ff01;
+$preto: #000000;
+$cinza-escuro: #333333;
+$cinza-input: #5e5e5e;
+$fundo-mgs: #fbf9fa;
+
+body {
+  color: #2E2F30 !important;
+}
+
+@mixin fonte-verde {
+  color: #00ff01;
+}
+
+@mixin full_width {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+@mixin primary {
+  background-color: $preto;
+  border: none;
+  @include fonte-verde;
+}
+
+
+@mixin inverso {
+  background-color: $verde;
+  border: none;
+  color: $cinza-escuro;
+}
+
+.btn-primary {
+  @include primary;
+}
+
+.site-wrapper {
+  @include full_width;
+}
+
+.custom-search-input {
+  background: $preto none repeat scroll 0 0;
+  margin: 0;
+  padding: 10px;
+  height: 61px;
+  @include fonte-verde;
+  text-align: center;
+  padding: 18px 10px;
+}
+
+#search {
+  padding-top: 12px !important;
+  width: 90%;
+  text-align: center;
+  all: inherit;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.search-query {
+  background-color: $cinza-input;
+  border: none;
+  width: 90%;
+}
+
+.all_conversation {
+  height: 61px;
+  background: $cinza-escuro none repeat scroll 0 0;
+  border: none;
+  text-align: center !important;
+  width: 100%;
+}
+
+.new_message_head {
+  background: $verde none repeat scroll 0 0;
+  float: left;
+  font-size: 13px;
+  font-weight: 100;
+  padding: 18px 10px;
+  width: 100%;
+  height: 61px;
+  z-index: 99;
+  position: fixed;
+}
+
+.chat_area {
+  float: left;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.chat_area li {
+  padding: 14px 14px 0;
+  list-style-type: none;
+}
+
+.chat_area .chat-body1 {
+  margin-left: 50px;
+  color: black;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.chat-body1 p {
+  background: $fundo-mgs none repeat scroll 0 0;
+  padding: 10px;
+  margin-left: 20px;
+  width: 98%;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+
+.btn-primary:hover {
+  @include primary;
+}
+
+.new_message {
+  text-align: center;
+}
+
+textarea.form-control {
+  width: 98%;
+}
+
+.salas {
+  padding-top: 15px;
+  height: 59px !important;
+}
+
+.chat-img {
+  margin-top: -10px !important;
+  margin-right: 10px;
+}
+
+.lead {
+  text-align: center;
+}
+
+a {
+  color: $cinza-escuro;
+}
+
+a:hover {
+  color: $cinza-input;
+  text-decoration: none;
+}
+
+.badge {
+  margin-right: 8px;
+  background-color: $preto;
+  @include fonte-verde;
+}
+
+
+.icon {
+  font-size: x-large !important;
+  padding-right: 15px;
+}
+
+.username {
+  padding-left: 60px;
+}
+
+.fundo-login {
+  @include fonte-verde;
+  background-color: $cinza-escuro;
+
+  a {
+    @include fonte-verde;
+    margin-bottom: 10px !important;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  .btn {
+    @include inverso;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+}
+
+.input {
+  @include fonte-verde;
+  background-color: $cinza-input;
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+  height: 35px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  @include fonte-verde;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+@mixin div_centralizada {
+  margin: 0 auto !important;
+  width: 50% !important;
+}
+
+.panel {
+  border: none !important;
+  @include div_centralizada;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
+  @media (max-width: 767px) {
+    width: 80% !important;
+  }
+}
+
+.panel-body {
+  @include div_centralizada;
+  @media (max-width: 767px) {
+    width: 100% !important;
+  }
+}
+
+.login-title {
+  font-size: 30px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+#error_explanation {
+  h2 {
+    font-size: small !important;
+  }
+
+  ul li {
+    font-size: 15px !important;
+  }
+}
+
+
+.card {
+  @include div_centralizada;
+  margin-top: 100px !important;
+  background-color: $cinza-escuro;
+  text-align: center;
+  width: 65% !important;
+  padding-bottom: 10px;
+
+  .input {
+    margin: 0 auto !important;
+    width: 80% !important;
+  }
+
+  .pull-left {
+    @include fonte-verde;
+    margin-left: 15px;
+  }
+
+  .pull-right {
+    @include fonte-verde;
+    margin-right: 15px;
+  }
+
+  label {
+    @include fonte-verde;
+  }
+
+  @media (max-width: 767px) {
+    width: 100% !important;
+  }
+
+  .card-title {
+    background-color: $preto;
+    @include fonte-verde;
+    padding: 15px;
+  }
+
+  .card-text {
+    background-color: $cinza-escuro;
+    color: $verde !important;
+    text-align: justify;
+  }
+
+  .img-fluid {
+    background-color: $cinza-escuro;
+  }
+
+  .obs {
+    @include fonte-verde;
+    text-align: justify !important;
+    margin: 20px 20px 20px 20px !important;
+  }
+}
+
+.list_card {
+  padding: 10px !important;
+}
+
+li {
+  padding: 14px 14px 0;
+  list-style-type: none;
+}
+
+.chat-body1 {
+  margin-left: 50px;
+}
+
+.nome_sala {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .nome_sala {
+    margin-top: 70px !important;
+    margin-bottom: 15px;
+  }
+}
+
+.input-group {
+  width: 100%;
+}
+
+.icone_input {
+  position: absolute !important;
+  margin-top: 4px !important;
+  margin-left: -27px !important;
+  z-index: 99 !important;
+}
+
+.fonte-verde {
+  @include fonte-verde;
+}

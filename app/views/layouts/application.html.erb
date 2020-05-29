@@ -1,0 +1,26 @@
+<%= render "layouts/head_meta_application" %>
+<body>
+<div id="wrapper">
+  <div class="site-wrapper">
+    <% if user_signed_in? %>
+      <%= render "shared/sidebar" %>
+    <% end %>
+    <div id="page-content-wrapper col-md-1">
+      <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+      </button>
+      <%= render "layouts/navbar" %>
+
+      <div class="col-md-12 message_section">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "layouts/js" %>
+</body>
+</html>

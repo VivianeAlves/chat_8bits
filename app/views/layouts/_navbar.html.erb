@@ -1,0 +1,9 @@
+<nav class="new_message_head col-md-11">
+  <div class="pull-left username">
+    <strong>Nick: </strong><%= link_to "#{current_user.name}", edit_user_registration_path %>
+  </div>
+  <div class="pull-right links_menu">
+    <%= link_to "", "/chat_rooms_user", class: "icon fa fa-cog" %>
+    <%= link_to "", destroy_user_session_path, method: :delete, data: {confirm: 'Você tem certeza que deseja sair?'}, class: "icon fa fa-power-off" %>
+  </div>
+</nav>
